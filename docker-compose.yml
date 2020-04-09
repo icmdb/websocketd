@@ -1,0 +1,14 @@
+version: "3"
+services:
+  websocketd:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: websocketd
+    hostname: websocketd
+    image: icmdb/websocketd
+    ports:
+      - 8888:8888
+#    volumes:
+#      - ./shell.sh:/websocketd/shell.sh
+    command: ["--port=8888", "/websocketd/shell.sh"]
